@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #fff;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #666;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #444;
+        }
+
+        tr:hover {
+            background-color: #555;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="fadeIn">
+    <div class="container">
+        <h1>Data Visualization</h1>
+        <table>
+            <tr>
+                <th>Nitrogen</th>
+                <th>Phosphorous</th>
+                <th>Potassium</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Ph</th>
+                <th>Rainfall</th>
+                <th>Result</th>
+            </tr>
+            {% for item in data %}
+            <tr>
+                <td>{{ item['Nitrogen'] }}</td>
+                <td>{{ item['Phosphorous'] }}</td>
+                <td>{{ item['Potassium'] }}</td>
+                <td>{{ item['Temperature'] }}</td>
+                <td>{{ item['Humidity'] }}</td>
+                <td>{{ item['Ph'] }}</td>
+                <td>{{ item['Rainfall'] }}</td>
+                <td>{{ item['Result'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
